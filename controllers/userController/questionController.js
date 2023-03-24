@@ -187,7 +187,7 @@ const particularQuestion = async (req, res) => {
 
       res.json(question.vote);
     } catch (error) {
-      res.status(500).send("Server error");
+      res.status(500).json({message:"Server error"});
     }
   };
 
@@ -211,7 +211,7 @@ const removeIndex = question.vote.map(like => like === userId).indexOf(userId);
 
       //decrease users reputation by 2 points 
       const user = await User.findById(question.user._id)
-      user.reputation -= 2;
+      user.reputation -= 7;
       await user.save();
 
     res.json(question.vote);
