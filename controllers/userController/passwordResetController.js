@@ -18,6 +18,7 @@ const passwordResetPost = async(req,res)=>{
 }
 
 
+
 const verifyLink = async(req,res)=>{
     try {
         const user = await User.findOne({_id:req.params.id});
